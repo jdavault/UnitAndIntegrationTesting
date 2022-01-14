@@ -1,0 +1,4 @@
+INSERT INTO student (first_name, last_name, email, gender) VALUES ('Steve','Davault','@gmail.com', "MALE");
+INSERT INTO student (first_name, last_name, email, gender) VALUES ('Sarah','Smith','Olson@gmail.com', "FEMALE");
+INSERT INTO student (first_name, last_name, email, gender) VALUES ('Gregg','Thompson','Johnson@gmail.com', "MALE");
+INSERT INTO student (first_name, last_name, email, gender) VALUES ('John','Howell','Myers@gmail.com', "MALE");

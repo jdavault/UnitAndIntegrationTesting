@@ -13,12 +13,12 @@ public class StudentController {
 
     private final StudentService studentService;
 
-    @GetMapping()
+    @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
-    @PostMapping()
+    @PostMapping
     public void addStudent(@Valid @RequestBody Student student) {
         studentService.addStudent(student);
     }

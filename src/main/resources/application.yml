@@ -1,16 +1,19 @@
-server:
-  port : 8081
-
 spring:
+  server:
+    port : 8081
   datasource:
     username: postgres
     url: jdbc:postgresql://localhost:5432/amigoscode
     password: postgres
   jpa:
-    hibernate:
-      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: 'true'
-        show_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
