@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/v1/students")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
 
     private final StudentService studentService;
@@ -16,6 +17,11 @@ public class StudentController {
     @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @GetMapping("{studentId}")
+    public Student getAllStudents(@PathVariable long studentId) {
+        return studentService.getStudentById(studentId);
     }
 
     @PostMapping
@@ -28,4 +34,13 @@ public class StudentController {
             @PathVariable("studentId") Long studentId) {
         studentService.deleteStudent(studentId);
     }
+
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required=false) String name,
+            @RequestParam(required=false) String email){
+        studentService.updateStudent(studentId,name, email);
+    }
+
 }

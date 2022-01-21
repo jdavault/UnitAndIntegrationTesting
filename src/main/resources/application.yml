@@ -1,6 +1,5 @@
 spring:
-  server:
-    port : 8081
+  port: 8080
   datasource:
     username: postgres
     url: jdbc:postgresql://localhost:5432/amigoscode
@@ -11,7 +10,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: 'true'
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: 'true'
 server:
   error:
